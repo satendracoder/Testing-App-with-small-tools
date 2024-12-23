@@ -1,0 +1,8 @@
+<div class="container">
+    <h3>Upload an Image:</h3>
+    <input type="file" (change)="onFileChange($event)" />
+    <img *ngIf="imagePreview" [src]="imagePreview" id="imagePreview" alt="Uploaded Image" />
+    <button [disabled]="!selectedFile" (click)="removeBackground()">Remove Background</button>
+    <img *ngIf="outputImage" [src]="outputImage" id="outputImage" alt="Processed Image" />
+    <button *ngIf="outputImage" (click)="downloadImage()">Download Image</button>
+</div>

@@ -1,0 +1,19 @@
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#imagePreview,
+#outputImage {
+    max-width: 300px;
+    max-height: 300px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}

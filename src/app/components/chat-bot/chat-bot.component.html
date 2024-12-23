@@ -1,0 +1,71 @@
+<!-- app.component.html -->
+<div class="container_bot">
+    <h1>WebSocket Connection</h1>
+    <div class="btn_bot">
+        <button (click)="connect()">Connect</button>
+        <button (click)="disconnect()">Disconnect</button>
+    </div>
+
+    <div class="input-container">
+        <input type="text" [(ngModel)]="userId" placeholder="Enter your User ID" />
+        <input type="text" [(ngModel)]="messageToSend" placeholder="Type your message" />
+        <button (click)="sendMessage()">Send Message</button>
+    </div>
+
+    <div>
+        <!-- <h3>Received Messages:</h3>
+        <ul>
+            <li *ngFor="let message of receivedMessages">{{ message }}</li>
+        </ul> -->
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Main Balance</th>
+                    <th>Ad Balance</th>
+                    <th>Reward</th>
+                    <th>RE Reward</th>
+                    <th>B Reward</th>
+                    <th>Total Incentives</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through the receivedMessages array and display each message's data -->
+                <tr *ngFor="let message of receivedMessages">
+                    <td>{{ message.MainBal }}</td>
+                    <td>{{ message.AdBal }}</td>
+                    <td>{{ message.Reward }}</td>
+                    <td>{{ message.REReward }}</td>
+                    <td>{{ message.BReward }}</td>
+                    <td>{{ message.TotalIncentives || 'N/A' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="message_bot">
+        <h2>Message to Everyone:</h2>
+        <p>
+            In this project, we are using Angular for the frontend and <b>.NET</b> for the backend API. The Angular
+            application
+            handles
+            user interactions, displaying data dynamically, and managing WebSocket communication, while the <b>.NET
+                API</b> is
+            responsible
+            for handling requests, processing data, and responding to the frontend with the necessary information.
+        </p>
+
+        <p>To display dynamic data, the frontend (Angular) receives messages through WebSocket, processes them, and
+            displays
+            them
+            in a user-friendly table format. These messages come from the <b>.NET API</b>, which is responsible for
+            providing
+            the
+            data,
+            such as transaction details, balances, rewards, etc.</p>
+    </div>
+
+</div>

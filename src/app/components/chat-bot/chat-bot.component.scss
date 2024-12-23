@@ -1,0 +1,182 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container styles */
+div {
+    width: 100%;
+    margin: 15px auto;
+
+}
+
+.container_bot {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .btn_bot {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Header styles */
+h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Buttons */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Input field */
+input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    margin-right: 10px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Message list */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #e9f7fe;
+    border: 1px solid #007bff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+/* Container for buttons and input */
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button+input {
+    margin-left: 10px;
+}
+
+
+
+/* Table container styles */
+.table-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Header styles */
+th {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Table data styles */
+td {
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+    color: #555;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+/* Row hover effect */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Empty cell (Total Incentives) */
+td {
+    text-align: left;
+    border: 1px solid;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+}
+
+
+.message_bot {
+    width: 80%;
+    margin: auto;
+    padding-top: 10px;
+
+    h2 {
+        padding: 10px auto;
+    }
+
+    p {
+        padding: 10px 0px;
+    }
+}
