@@ -13,6 +13,7 @@ export class BgImageCardComponent {
   imagePreview: string | ArrayBuffer | null = null;
   outputImage: string | null = null;
   selectedFile: File | null = null;
+    isLoading: boolean = false;
 
   private apiKey = 'WEvpWNA6CaiMPoD7tkupj7Vi'; // Replace with your remove.bg API key
 
@@ -38,6 +39,8 @@ export class BgImageCardComponent {
       return;
     }
 
+    this.isLoading = true; // Start loading animation
+
     const formData = new FormData();
     formData.append('image_file', this.selectedFile);
     formData.append('size', 'auto');
@@ -49,17 +52,19 @@ export class BgImageCardComponent {
     this.http
       .post('https://api.remove.bg/v1.0/removebg', formData, {
         headers,
-        responseType: 'blob' // Expect a binary response
+        responseType: 'blob', // Expect a binary response
       })
       .subscribe({
         next: (blob) => {
           const url = URL.createObjectURL(blob);
-          this.outputImage = url; // Show processed image
+          this.outputImage = url;
+          this.isLoading = false; // Stop loading animation
         },
         error: (error) => {
           console.error('Error:', error);
           alert('Failed to remove background. Please try again.');
-        }
+          this.isLoading = false; // Stop loading animation
+        },
       });
   }
 

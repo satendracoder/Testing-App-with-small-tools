@@ -1,19 +1,93 @@
 .container {
     text-align: center;
+    padding: 20px;
+}
+
+.image-preview {
+    margin: 20px 0;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.preview-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.btn-remove {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.loading-spinner {
+    margin: 20px auto;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+.output-container {
     margin-top: 20px;
 }
 
-#imagePreview,
-#outputImage {
+.output-image {
     max-width: 300px;
-    max-height: 300px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    display: block;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    transition: background-color 1s ease-in-out;
+    /* Smooth background transition */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Initial background color */
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    /* Fade in effect after background removal */
 }
 
-button {
-    margin: 10px;
-    padding: 10px;
+.btn-download {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+/* Fade-in effect for output image */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

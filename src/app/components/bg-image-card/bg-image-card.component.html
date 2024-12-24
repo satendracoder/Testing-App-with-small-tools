@@ -1,8 +1,22 @@
 <div class="container">
-    <h3>Upload an Image:</h3>
-    <input type="file" (change)="onFileChange($event)" />
-    <img *ngIf="imagePreview" [src]="imagePreview" id="imagePreview" alt="Uploaded Image" />
-    <button [disabled]="!selectedFile" (click)="removeBackground()">Remove Background</button>
-    <img *ngIf="outputImage" [src]="outputImage" id="outputImage" alt="Processed Image" />
-    <button *ngIf="outputImage" (click)="downloadImage()">Download Image</button>
+    <h1>Remove Background</h1>
+
+    <div class="image-preview">
+        <label for="fileInput" class="file-label">Choose Image</label>
+        <input id="fileInput" type="file" (change)="onFileChange($event)" hidden />
+        <img *ngIf="imagePreview" [src]="imagePreview" alt="Image Preview" class="preview-image" />
+    </div>
+
+    <button (click)="removeBackground()" class="btn-remove" [disabled]="!selectedFile">
+        Remove Background
+    </button>
+
+    <div *ngIf="isLoading" class="loading-spinner"></div>
+
+    <div class="output-container">
+        <img *ngIf="outputImage" [src]="outputImage" alt="Output Image" class="output-image fade-in" />
+        <button *ngIf="outputImage" (click)="downloadImage()" class="btn-download">
+            Download Image
+        </button>
+    </div>
 </div>
