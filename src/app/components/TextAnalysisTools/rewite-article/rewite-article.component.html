@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Article Rewriter</h1>
+    <textarea
+      [(ngModel)]="article"
+      placeholder="Paste your article here"
+      rows="10"
+      class="form-control"
+    ></textarea>
+    <button (click)="processArticle()" [disabled]="isProcessing" class="btn btn-primary mt-2">
+      Process
+    </button>
+    <div *ngIf="isProcessing" class="spinner-border text-primary mt-2" role="status">
+      <span class="sr-only">Processing...</span>
+    </div>
+    <div *ngIf="rewrittenArticle" class="mt-4">
+      <h3>Rewritten Article:</h3>
+      <p>{{ rewrittenArticle }}</p>
+    </div>
+  </div>
+  
