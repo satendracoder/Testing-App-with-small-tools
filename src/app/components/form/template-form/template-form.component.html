@@ -1,0 +1,17 @@
+<div class="" style="margin-top: 20px;">
+    <form action="">
+        <div class="group-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" [(ngModel)]="UserData.name" required>
+        </div>
+
+        <div class="group-form">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" [(ngModel)]="UserData.email" required>
+        </div>
+
+        <div class="group-form">
+            <button type="submit" (click)="submitForm()">Submit</button>
+        </div>
+    </form>
+</div>

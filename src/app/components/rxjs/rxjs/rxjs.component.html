@@ -1,0 +1,27 @@
+<div class="qr-code-container">
+    <h2>Generate and Export QR Code With Library </h2>
+    <!-- URL Input -->
+    <input
+      type="text"
+      [(ngModel)]="qrData"
+      placeholder="Enter URL"
+      class="url-input"
+    />
+    <br />
+  
+    <!-- Generate QR Code Button -->
+    <button (click)="generateQRCode()">Generate QR Code</button>
+  
+    <!-- Display QR Code -->
+    <div *ngIf="qrCodeImage" class="qr-code-output">
+      <img [src]="qrCodeImage" alt="Generated QR Code" />
+    </div>
+  
+    <!-- Download QR Code Button -->
+    <button *ngIf="qrCodeImage" (click)="downloadQRCode()">Download QR Code</button>
+  </div>
+  
+
+  <br>
+  <br>
+  <app-qr-code></app-qr-code>

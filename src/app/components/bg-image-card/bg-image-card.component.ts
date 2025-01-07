@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { BgComponent } from "../bg/bg.component";
 
 @Component({
   selector: 'app-bg-image-card',
-  imports: [CommonModule],
+  imports: [CommonModule, BgComponent],
   templateUrl: './bg-image-card.component.html',
   styleUrl: './bg-image-card.component.scss'
 })

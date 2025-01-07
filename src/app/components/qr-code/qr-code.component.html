@@ -1,0 +1,20 @@
+<div class="qr-code-container">
+    <h2>Generate QR Code Without Library</h2>
+  
+    <!-- Input Field -->
+    <input
+      type="text"
+      [(ngModel)]="qrData"
+      placeholder="Enter text or URL"
+      class="url-input"
+    />
+    <br />
+  
+    <!-- Generate and Export Buttons -->
+    <button (click)="generateQRCode()">Generate QR Code</button>
+    <button (click)="exportQRCode()">Export QR Code</button>
+  
+    <!-- QR Code Canvas -->
+    <canvas #qrCanvas class="qr-canvas"></canvas>
+  </div>
+  
