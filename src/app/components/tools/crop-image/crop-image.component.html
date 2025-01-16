@@ -1,0 +1,34 @@
+<div class="crop_image">
+    <div class="upload-file">
+        <label for="file-upload">Choose a File</label>
+        <input type="file" id="file-upload" (change)="onFileChange($event)" />
+        <div class="file-name" *ngIf="fileName">{{ fileName }}</div>
+    </div>
+
+
+    <div class="image-container">
+        <div class="image_box">
+            <canvas #canvas  style="position: absolute;"></canvas>
+            <div #cropBox class="crop-box" (mousedown)="startDragOrResize($event)" (mousemove)="onMouseMove($event)"
+                (mouseup)="onMouseUp()" (mouseleave)="onMouseUp()">
+                <!-- Resizable Handles -->
+                <div *ngFor="let handle of resizeHandles" class="resize-handle" [ngStyle]="handle.style"
+                    (mousedown)="startResizing($event, handle.position)"></div>
+            </div>
+        </div>
+    
+        <div class="image_box">
+            <img *ngIf="croppedImage" [src]="croppedImage" alt="Cropped Image" />
+        </div>
+    </div>
+   
+
+    <div class="export-container">
+        <button (click)="exportCroppedImage()">Export</button>
+
+        <button #downloadLink (click)="downloadimg()">
+            Download Cropped Image
+        </button>
+       
+    </div>
+</div>

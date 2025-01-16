@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Grammar Checker</h2>
+    <textarea
+      [(ngModel)]="inputText"
+      rows="5"
+      cols="50"
+      placeholder="Enter text to check grammar..."
+    ></textarea>
+    <br />
+    <button (click)="checkGrammar()" [disabled]="isProcessing">
+      {{ isProcessing ? 'Checking...' : 'Check Grammar' }}
+    </button>
+  
+    <div *ngIf="results && results.matches">
+      <h3>Results:</h3>
+      <ul>
+        <li *ngFor="let match of results.matches">
+          <strong>Error:</strong> {{ match.message }}
+          <br />
+          <strong>Suggestions:</strong>
+          <span *ngFor="let suggestion of match.replacements">
+            {{ suggestion.value }},
+          </span>
+        </li>
+      </ul>
+    </div>
+  
+    <div *ngIf="isProcessing" class="loading-spinner"></div>
+  </div>
+  

@@ -1,0 +1,212 @@
+.crop_image{
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin: 20px auto;
+
+    .upload-file {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px; // Adds spacing between elements
+        margin: 10px auto;
+      
+        label {
+          display: inline-block;
+          padding: 10px 20px;
+          font-size: 16px;
+          font-weight: 500;
+          color: #fff;
+          background-color: #007bff;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      
+          &:hover {
+            background-color: #0056b3; // Darker shade on hover
+          }
+        }
+      
+        input[type='file'] {
+          display: none; // Hides the default file input
+      
+          &::file-selector-button {
+            display: none; // Hides default file upload button
+          }
+        }
+      }
+      
+
+
+    .image-container {
+        display: flex;
+        gap: 20px; // Adds space between the two columns
+        align-items: flex-start; // Aligns the columns at the top
+        flex-wrap: wrap; // Ensures responsiveness
+        position: relative;
+      
+        .image_box {
+          flex: 1; // Ensures both columns take equal space
+          max-width: 50%; // Limits each column to half the container's width
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 10px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          background-color: #f9f9f9;
+          position: relative;
+          height: 500px;
+      
+          canvas {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: absolute;
+          }
+      
+          .crop-box {
+            position: relative;
+            border: 2px dashed #007bff;
+            background: rgba(0, 123, 255, 0.1);
+            cursor: move;
+      
+            .resize-handle {
+              width: 10px;
+              height: 10px;
+              background: #007bff;
+              position: absolute;
+              cursor: pointer;
+              border-radius: 50%;
+            }
+          }
+      
+          img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+          }
+        }
+      
+        // Responsive Design
+        @media (max-width: 768px) {
+          flex-direction: column; // Stacks the columns vertically for smaller screens
+          .image_box {
+            max-width: 100%; // Full width for each column
+          }
+        }
+      }
+      
+
+
+    .export-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; // Adds spacing between elements
+      
+        button {
+          padding: 10px 20px;
+          font-size: 16px;
+          font-weight: bold;
+          color: #fff;
+          background-color: #28a745; // Green color for export button
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.2s;
+      
+          &:hover {
+            background-color: #218838; // Darker green on hover
+            transform: scale(1.05); // Slight scaling effect
+          }
+      
+          &:active {
+            background-color: #1e7e34; // Even darker green on click
+            transform: scale(0.95); // Click effect
+          }
+        }
+      
+        a {
+          display: none; // Keeps the link hidden
+        }
+      
+        img {
+          max-width: 100%;
+          height: auto;
+          border: 2px solid #ddd;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          margin-top: 10px;
+        }
+      }
+      
+}
+
+
+  
+  img {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+  
+  div[style] {
+    box-sizing: border-box;
+  }
+
+  .resize-handle {
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    position: absolute;
+  }
+  
+  
+
+  .crop-box {
+    position: absolute;
+    border: 2px dashed red;
+    cursor: move;
+    width: 100px;
+    height: 100px;
+    top: 50px;
+    left: 50px;
+  }
+  
+  .resize-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: blue;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+
+  .crop-box {
+    position: absolute;
+    border: 2px dashed red;
+    cursor: move;
+    width: 100px;
+    height: 100px;
+    top: 50px;
+    left: 50px;
+  }
+  
+  .resize-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: blue;
+    cursor: pointer;
+  }
+  

@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { MateriallistModule } from '../../shared/materiallist/materiallist.module';
+import { MateriallistModule } from '../../../shared/materiallist/materiallist.module';
+import { NewQrComponent } from '../new-qr/new-qr.component';
 
 @Component({
   selector: 'app-qr-code',

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BgComponent } from './bg.component';
+import { NewQrComponent } from './new-qr.component';
 
-describe('BgComponent', () => {
-  let component: BgComponent;
-  let fixture: ComponentFixture<BgComponent>;
+describe('NewQrComponent', () => {
+  let component: NewQrComponent;
+  let fixture: ComponentFixture<NewQrComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BgComponent]
+      imports: [NewQrComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BgComponent);
+    fixture = TestBed.createComponent(NewQrComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

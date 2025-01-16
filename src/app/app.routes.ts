@@ -11,7 +11,7 @@ export const routes: Routes = [
     component: ChatBotComponent,
     title: 'ASP API + WebSocket',
   },
-  { path: 'bg', component: BgImageCardComponent, title: 'Background Remove' },
+ 
   { path: 'tables', component: TablePageComponent, title: 'Tables list' },
   { path: 'rewite', component: RewiteArticleComponent, title: 'Text Analysis' },
   {
@@ -30,5 +30,69 @@ export const routes: Routes = [
         (rxjs) => rxjs.RxjsComponent
       ),
     title: 'RxJS Some Questoin',
+  },
+
+  {
+    path: 'tools',
+    loadComponent: () =>
+      import('./components/tools/tools.component').then(
+        (tools) => tools.ToolsComponent
+      ),
+    title: 'Tools',
+    children: [
+      {
+        path: 'count_word',
+        loadComponent: () =>
+          import('./components/wordCount/word-count-result/word-count-result.component').then(
+            (count) => count.WordCountResultComponent
+          ),
+          title:"Count Word"
+      },
+
+      {
+        path: 'bg',
+        loadComponent: () =>
+          import('./components/bg-image-card/bg-image-card.component').then(
+            (bg) => bg.BgImageCardComponent
+          ),
+          title:"Background Remove"
+      },
+
+      {
+        path: 'qe_code',
+        loadComponent: () =>
+          import('./components/tools/qr-code/qr-code.component').then(
+            (qr) => qr.QRCodeComponent
+          ),
+          title:"Generate and Export QR"
+      },
+
+      {
+        path: 'grammar_checker',
+        loadComponent: () =>
+          import('./components/tools/grammar-checker/grammar-checker.component').then(
+            (grammar) => grammar.GrammarCheckerComponent
+          ),
+          title:"Free Grammar Checker"
+      },
+
+      {
+        path: 'crop_image',
+        loadComponent: () =>
+          import('./components/tools/crop-image/crop-image.component').then(
+            (crop) => crop.CropImageComponent
+          ),
+          title:"Free Crop image"
+      },
+
+      {
+        path: 'new_qr',
+        loadComponent: () =>
+          import('./components/tools/new-qr/new-qr.component').then(
+            (newqr) => newqr.NewQrComponent
+          ),
+          title:"Free new_qr"
+      },
+    ],
   },
 ];

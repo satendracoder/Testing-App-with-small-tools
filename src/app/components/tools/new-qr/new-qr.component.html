@@ -1,0 +1,92 @@
+<div class="container">
+    <h1>QR Code Generator</h1>
+    
+    <div class="form-group">
+      <label for="content">Content</label>
+      <input
+        type="text"
+        id="content"
+        class="form-control"
+        [(ngModel)]="content"
+        (ngModelChange)="generateQR()"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="width">Size (px)</label>
+      <input
+        type="number"
+        id="width"
+        class="form-control"
+        [(ngModel)]="width"
+        (ngModelChange)="generateQR()"
+        min="100"
+        max="1000"
+      />
+    </div>
+
+    <div class="color-picker">
+      <div class="form-group">
+        <label for="color">QR Color</label>
+        <input
+          type="color"
+          id="color"
+          [(ngModel)]="color"
+          (ngModelChange)="generateQR()"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="backgroundColor">Background Color</label>
+        <input
+          type="color"
+          id="backgroundColor"
+          [(ngModel)]="backgroundColor"
+          (ngModelChange)="generateQR()"
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="margin">Margin</label>
+      <input
+        type="number"
+        id="margin"
+        class="form-control"
+        [(ngModel)]="margin"
+        (ngModelChange)="generateQR()"
+        min="0"
+        max="5"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="logoUrl">Logo URL (optional)</label>
+      <input
+        type="text"
+        id="logoUrl"
+        class="form-control"
+        [(ngModel)]="logoUrl"
+        (ngModelChange)="generateQR()"
+        placeholder="Enter URL of CORS-enabled image"
+      />
+      <small class="text-muted">Note: The image URL must support CORS</small>
+    </div>
+
+    <div class="error-message" *ngIf="errorMessage" style="color: red; margin: 10px 0;">
+      {{ errorMessage }}
+    </div>
+
+    <div class="qr-preview" *ngIf="qrDataUrl">
+      <img [src]="qrDataUrl" [width]="width" alt="QR Code" />
+      
+      <div style="margin-top: 1rem;">
+        <button class="btn btn-primary" (click)="downloadQR('png')">
+          Download PNG
+        </button>
+        <button class="btn btn-secondary" (click)="downloadQR('svg')">
+          Download SVG
+        </button>
+      </div>
+    </div>
+  </div>

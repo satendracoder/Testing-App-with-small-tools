@@ -5,7 +5,7 @@ import { MateriallistModule } from '../../../shared/materiallist/materiallist.mo
 import { AnimationOptions
   
  } from 'ngx-lottie';
-import { QRCodeComponent } from "../../qr-code/qr-code.component";
+import { QRCodeComponent } from "../../tools/qr-code/qr-code.component";
 
 @Component({
   selector: 'app-rxjs',

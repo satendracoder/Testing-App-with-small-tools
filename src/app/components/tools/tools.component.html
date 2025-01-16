@@ -1,0 +1,18 @@
+<div class="tools_fuild">
+    <h2>All Tools</h2>
+   
+        <div class="links_tool">
+            @for (item of tools; track $index) {
+           <div > <a [routerLink]="item.Baseurl" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: false }">{{item.title}}</a></div>
+        }
+        </div>
+    
+   
+</div>
+
+<br>
+
+<div class="tools_body">
+    <router-outlet></router-outlet>
+</div>

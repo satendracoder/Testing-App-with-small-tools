@@ -1,0 +1,46 @@
+<div class="word-counter-container">
+  <!-- Title -->
+  <div class="header">
+    <h1>Word Counter & Analyzer</h1>
+    <p>Analyze your text for word count, character count, and top keywords!</p>
+  </div>
+
+  <!-- Text Input Section -->
+  <div class="input-section">
+    <textarea
+      placeholder="Type or paste your text here..."
+      [(ngModel)]="userInput"
+    ></textarea>
+  </div>
+
+  <!-- Buttons Section -->
+  <div class="buttons-section">
+    <button class="analyze-btn" (click)="countWords()">Analyze Text</button>
+  </div>
+
+  <!-- Loader Section -->
+  <div *ngIf="isProcessing" class="loader">
+    <div class="loading-spinner"></div>
+    <span>Loading...</span>
+  </div>
+
+  <!-- Result Section -->
+  <div
+    *ngIf="stats && !isProcessing"
+    class="result-section fade-in"
+  >
+    <h2>Analysis Results</h2>
+    <div class="stats">
+      <p><strong>Total Words:</strong> {{ stats.wordCount }}</p>
+      <p><strong>Total Characters (with spaces):</strong> {{ stats.charCountWithSpaces }}</p>
+      <p><strong>Total Characters (without spaces):</strong> {{ stats.charCountWithoutSpaces }}</p>
+      <p><strong>Total Sentences:</strong> {{ stats.sentenceCount }}</p>
+    </div>
+    <div class="top-words">
+      <h3>Top Keywords</h3>
+      <ul>
+        <li *ngFor="let word of stats.topWords">{{ word.text }}: {{ word.count }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

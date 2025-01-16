@@ -1,0 +1,144 @@
+/* Container */
+.word-counter-container {
+  max-width: 800px;
+  margin: 50px auto;
+  font-family: "Arial", sans-serif;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+}
+
+/* Header Section */
+.header h1 {
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.header p {
+  font-size: 16px;
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Input Section */
+.input-section textarea {
+  width: 100%;
+  height: 150px;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  resize: none;
+  margin-bottom: 20px;
+}
+
+/* Buttons Section */
+.buttons-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.analyze-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.analyze-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Loader Section */
+.loader {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loader span {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Result Section */
+.result-section {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  animation: fade-in 0.8s ease-in-out;
+}
+
+.result-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.stats p {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.top-words ul {
+  list-style: none;
+  padding: 0;
+}
+
+.top-words li {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  animation: fade-in 0.8s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
