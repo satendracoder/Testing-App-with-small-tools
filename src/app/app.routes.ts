@@ -93,6 +93,16 @@ export const routes: Routes = [
           ),
           title:"Free new_qr"
       },
+
+      
+      {
+        path: 'pdf',
+        loadComponent: () =>
+          import('./components/tools/pdf-design/pdf-design.component').then(
+            (pdf) => pdf.PdfDesignComponent
+          ),
+          title:"Free Generate PDF"
+      },
     ],
   },
 ];

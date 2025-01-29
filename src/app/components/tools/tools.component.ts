@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { title } from 'process';
-import { MateriallistModule } from '../../shared/materiallist/materiallist.module';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-tools',
-  imports: [RouterOutlet, MateriallistModule],
+  standalone: true,
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './tools.component.html',
   styleUrl: './tools.component.scss'
 })
@@ -37,5 +36,9 @@ export class ToolsComponent {
     },
 
     
+    {
+      title:"Free Generate PDF",
+      Baseurl:"/tools/pdf"
+    }
   ]
 }

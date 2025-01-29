@@ -33,7 +33,7 @@ export class NewQrComponent {
         color: this.color,
         backgroundColor: this.backgroundColor,
         margin: this.margin,
-        logoUrl: this.logoUrl || undefined,
+        logoUrl: this.logoUrl || undefined
       });
     } catch (error) {
       console.error('Error generating QR code:', error);
