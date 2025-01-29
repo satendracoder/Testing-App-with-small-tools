@@ -10,7 +10,7 @@ import { MateriallistModule } from './shared/materiallist/materiallist.module';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'chat-bot'
+  title = 'chat-bot mujhe nhi '
 
 }
 
