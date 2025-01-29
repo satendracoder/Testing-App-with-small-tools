@@ -20,9 +20,15 @@
   <router-outlet />
 
 
+  <div *ngIf="discoveredUrl; else noService">
+    <p>RD Service Discovered at: <strong>{{ discoveredUrl }}</strong></p>
+  </div>
+  <ng-template #noService>
+    <p>No RD Service found. Please install the required drivers and try again.</p>
+  </ng-template>
 
 
 
 
-  
+
 </div>
