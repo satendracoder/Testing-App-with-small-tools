@@ -8,7 +8,7 @@ import { provideToastr } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideLottieOptions } from 'ngx-lottie';
-import player from 'lottie-web';
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,8 +19,6 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(), // required animations providers
     provideToastr(), // Toastr providers
     provideHttpClient(withFetch()), provideAnimationsAsync(),
-    provideLottieOptions({
-      player: () => player,
-    }),
+   
   ]
 };
