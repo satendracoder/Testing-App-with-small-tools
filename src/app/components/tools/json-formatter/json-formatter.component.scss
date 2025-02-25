@@ -1,0 +1,17 @@
+textarea { width: 100%; margin-bottom: 10px; }
+    pre {
+      background: #1e1e1e;
+      color: #ffffff;
+      padding: 10px;
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+    .json-key { color: #9cdcfe; font-weight: bold; }       /* Blue for keys */
+    .json-string { color: #ce9178; }                         /* Orange for strings */
+    .json-empty-string { color: #ce9178; font-style: italic; } /* Italic for empty strings */
+    .json-number { color: #b5cea8; }                         /* Green for numbers */
+    .json-boolean { color: #569cd6; }                        /* Light blue for booleans */
+    .json-null { color: #c586c0; }                           /* Purple for null */
+    .json-undefined { color: #d16969; }                      /* Red for undefined */
+    .json-bracket { color: #9f900d; font-weight: bold; }      /* Gray for brackets */
+    .json-error { color: red; font-weight: bold; }

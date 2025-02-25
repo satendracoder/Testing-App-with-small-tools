@@ -3,6 +3,7 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 import { BgImageCardComponent } from './components/bg-image-card/bg-image-card.component';
 import { TablePageComponent } from './components/tables/table-page/table-page.component';
 import { RewiteArticleComponent } from './components/TextAnalysisTools/rewite-article/rewite-article.component';
+import { JsonFormatterComponent } from './components/tools/json-formatter/json-formatter.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/chat-bot', pathMatch: 'full' },
@@ -111,6 +112,12 @@ export const routes: Routes = [
             (voice) => voice.VoiceToolsComponent
           ),
           title:"Voice Tools"
+      },
+
+      {
+        path: 'json-formatter',
+        component: JsonFormatterComponent,
+          title:"Json-Formatter"
       },
     ],
   },

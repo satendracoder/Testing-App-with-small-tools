@@ -36,14 +36,18 @@ export class ToolsComponent {
     },
 
     
-    {
-      title:"Free Generate PDF",
-      Baseurl:"/tools/pdf"
-    },
+    // {
+    //   title:"Free Generate PDF",
+    //   Baseurl:"/tools/pdf"
+    // },
 
     {
       title:"Voice Tools",
       Baseurl:"/tools/voice"
+    },
+    {
+      title:"Json-Formatter Tools",
+      Baseurl:"/tools/json-formatter"
     }
   ]
 }
