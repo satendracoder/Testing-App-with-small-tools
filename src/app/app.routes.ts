@@ -103,6 +103,15 @@ export const routes: Routes = [
           ),
           title:"Free Generate PDF"
       },
+
+      {
+        path: 'voice',
+        loadComponent: () =>
+          import('./components/tools/voice-tools/voice-tools.component').then(
+            (voice) => voice.VoiceToolsComponent
+          ),
+          title:"Voice Tools"
+      },
     ],
   },
 ];

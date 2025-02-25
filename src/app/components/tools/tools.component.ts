@@ -39,6 +39,11 @@ export class ToolsComponent {
     {
       title:"Free Generate PDF",
       Baseurl:"/tools/pdf"
+    },
+
+    {
+      title:"Voice Tools",
+      Baseurl:"/tools/voice"
     }
   ]
 }
