@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { SvoicePlayService } from '../../../services/voice/svoice-play.service';
+import { JsonValidationComponent } from "../json-validation/json-validation.component";
 
 @Component({
   selector: 'app-voice-tools',
-  imports: [],
+  imports: [JsonValidationComponent],
   templateUrl: './voice-tools.component.html',
   styleUrl: './voice-tools.component.scss'
 })

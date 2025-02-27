@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { VoiceTakeService } from '../../../services/voice-take/voice-take.service';
 import { MateriallistModule } from '../../../shared/materiallist/materiallist.module';
-import { SvoicePlayService } from '../../../services/voice/svoice-play.service';
 
 @Component({
   selector: 'app-voice-take',

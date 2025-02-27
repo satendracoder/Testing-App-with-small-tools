@@ -6,9 +6,13 @@ import { RewiteArticleComponent } from './components/TextAnalysisTools/rewite-ar
 import { JsonFormatterComponent } from './components/tools/json-formatter/json-formatter.component';
 import { JsonComparisonComponent } from './components/tools/json-comparison/json-comparison/json-comparison.component';
 import { VoiceTakeComponent } from './components/tools/voice-take/voice-take.component';
+import { VoiceToolsComponent } from './components/tools/voice-tools/voice-tools.component';
+import { profile } from 'console';
+import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/chat-bot', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {path: 'home', component:ProfilePageComponent, title: 'Home'},
   {
     path: 'chat-bot',
     component: ChatBotComponent,
@@ -54,10 +58,7 @@ export const routes: Routes = [
 
       {
         path: 'bg',
-        loadComponent: () =>
-          import('./components/bg-image-card/bg-image-card.component').then(
-            (bg) => bg.BgImageCardComponent
-          ),
+        component:BgImageCardComponent,
           title:"Background Remove"
       },
 
@@ -109,10 +110,7 @@ export const routes: Routes = [
 
       {
         path: 'voice',
-        loadComponent: () =>
-          import('./components/tools/voice-tools/voice-tools.component').then(
-            (voice) => voice.VoiceToolsComponent
-          ),
+        component:VoiceToolsComponent,
           title:"Voice Tools"
       },
 

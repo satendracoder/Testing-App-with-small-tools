@@ -1,0 +1,15 @@
+<div class="container">
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+    <button (click)="removeBackground()" [disabled]="!imageSrc">Remove Background</button>
+    <button (click)="exportImage('png')" [disabled]="!imageSrc">Export as PNG</button>
+    <button (click)="exportImage('jpg')" [disabled]="!imageSrc">Export as JPG</button>
+    <button (click)="exportImage('svg')" [disabled]="!imageSrc">Export as SVG</button>
+    <div *ngIf="loading" class="loader"></div>
+    <canvas #canvasElement></canvas>
+  </div>
+
+  <br>
+    <br>
+    <br>
+    <br>
+    <br>

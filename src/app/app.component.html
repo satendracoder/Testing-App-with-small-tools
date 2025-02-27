@@ -5,7 +5,7 @@
     <span>&#9776;</span>
   </label>
   <ul>
-    <li><a href="/">Home</a></li>
+    <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
     <li><a routerLink="/chat-bot" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">ChatBot</a></li>
     <li><a routerLink="/bg" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Bg</a></li>
     <li><a href="/">Tables</a></li>
@@ -20,12 +20,33 @@
   <router-outlet />
 </div>
 
-<div class="top-categories">
-  <div *ngFor="let category of categories" class="category" [ngStyle]="{'background-color': category.color}">
-    <span>{{ category.name }}</span>
-    <div class="icon" [ngStyle]="{'background-color': category.iconBgColor}">
-      <i [class]="category.icon"></i>
-    </div>
-  </div>
+
+
+
+
+
+
+
+<div *ngIf="isLoading" class="loader-overlay">
+  <div class="loader"></div>
+  <p>Loading... Please wait</p>
 </div>
 
+
+
+
+
+
+<!-- 
+<div class="top-categories-container">
+  <button class="scroll-btn left" (click)="scroll('left')">&#10094;</button>
+  <div class="top-categories" #scrollContainer>
+    <div *ngFor="let category of categories" class="category" [ngStyle]="{'background-color': category.color}">
+      <span>{{ category.name }}</span>
+      <div class="icon" [ngStyle]="{'background-color': category.iconBgColor}">
+        <i [class]="category.icon"></i>
+      </div>
+    </div>
+  </div>
+  <button class="scroll-btn right" (click)="scroll('right')">&#10095;</button>
+</div> -->

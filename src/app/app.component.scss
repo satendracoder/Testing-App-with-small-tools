@@ -178,13 +178,75 @@ input[type="checkbox"] {
 
 
 
-.top-categories {
-    margin-bottom: 50px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.top-categories-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 90% !important;
+    overflow: hidden;
+    margin: auto;
+  
+    .scroll-btn {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 10px 20px !important;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      background: aquamarine !important;
+      border-radius: 40px;  
+    }
+    .left { left: 0; }
+    .right { right: 0; }
+  }
+  
+  .top-categories {
     display: flex;
     gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-    
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    padding: 10px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 90% !important;
+    margin: auto;
+  
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  
     .category {
       display: flex;
       align-items: center;
@@ -194,7 +256,7 @@ input[type="checkbox"] {
       min-width: 180px;
       font-weight: bold;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      
+  
       .icon {
         width: 35px;
         height: 35px;
@@ -207,8 +269,50 @@ input[type="checkbox"] {
   }
   
   @media (max-width: 768px) {
-    .top-categories {
-      flex-direction: column;
-      align-items: center;
+    .top-categories-container {
+      width: 100%;
+    }
+    .scroll-btn {
+      display: none;
     }
   }
+  
+
+
+
+
+
+
+
+
+
+
+  .loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
