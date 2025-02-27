@@ -19,3 +19,13 @@
 <div class="main_class">
   <router-outlet />
 </div>
+
+<div class="top-categories">
+  <div *ngFor="let category of categories" class="category" [ngStyle]="{'background-color': category.color}">
+    <span>{{ category.name }}</span>
+    <div class="icon" [ngStyle]="{'background-color': category.iconBgColor}">
+      <i [class]="category.icon"></i>
+    </div>
+  </div>
+</div>
+
