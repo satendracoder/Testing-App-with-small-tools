@@ -1,5 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { SvoicePlayService } from '../voice/svoice-play.service';
+import { Router } from '@angular/router';
 
 interface CustomWindow extends Window {
   SpeechRecognition: any;
@@ -17,7 +18,7 @@ export class VoiceTakeService {
   isListening: boolean = false;
   transcript: string = '';
 
-  constructor(private Voice_api: SvoicePlayService,private zone: NgZone) {
+  constructor(private Voice_api: SvoicePlayService,private zone: NgZone, private router: Router) {
     const SpeechRecognition = window.SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (SpeechRecognition) {
       this.recognition = new SpeechRecognition();
@@ -69,21 +70,41 @@ export class VoiceTakeService {
   }
 
   // 🟢 Process Voice Commands
+  // processCommand(command: string) {
+  //   if (command.includes('pay 500')) {
+  //     // alert('Paying ₹500');
+  //     this.Voice_api.speak(500);
+  //   } else if (command.includes('pay 1000')) {
+  //     // alert('Paying ₹1000');
+  //     this.Voice_api.speak(1000)
+  //   } else if (command.includes('change language to hindi')) {
+  //     this.recognition.lang = 'hi-IN';
+  //     alert('Language changed to Hindi');
+  //   } else if (command.includes('change language to english')) {
+  //     this.recognition.lang = 'en-US';
+  //     alert('Language changed to English');
+  //   } else {
+  //     alert('Unknown command: ' + command);
+  //   }
+  // }
+
+
+
+
+  // 🟢 Process Voice Commands
   processCommand(command: string) {
-    if (command.includes('pay 500')) {
-      // alert('Paying ₹500');
-      this.Voice_api.speak(500);
-    } else if (command.includes('pay 1000')) {
-      // alert('Paying ₹1000');
-      this.Voice_api.speak(1000)
-    } else if (command.includes('change language to hindi')) {
-      this.recognition.lang = 'hi-IN';
-      alert('Language changed to Hindi');
-    } else if (command.includes('change language to english')) {
-      this.recognition.lang = 'en-US';
-      alert('Language changed to English');
+    if (command.includes("aadhaar") || command.includes("eps") || command.includes("apes") 
+      || command.includes("paise nikalna") || command.includes("banking") || command.includes("bank service")) {
+      this.router.navigate(['/tools/new_qr']); // APES route par jao
+      //alert('Navigating to APES');
+    } else if (command.includes('home')) {
+      this.router.navigate(['/']); // Home route par jao
+      //alert('Navigating to Home');
+    } else if (command.includes('profile')) {
+      this.router.navigateByUrl('/tools/json-compare'); // Profile page par jao
+      //alert('Navigating to Profile');
     } else {
-      alert('Unknown command: ' + command);
+      //alert('Unknown command: ' + command);
     }
   }
 }
