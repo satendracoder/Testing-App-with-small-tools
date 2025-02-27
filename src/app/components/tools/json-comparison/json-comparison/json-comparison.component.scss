@@ -1,0 +1,15 @@
+.container { max-width: 800px; margin: auto; text-align: center; }
+    .input-section { display: flex; gap: 10px; }
+    textarea { width: 100%; height: 200px; padding: 10px; font-family: monospace; }
+    button { margin-top: 10px; padding: 10px; cursor: pointer; }
+    pre { background: #1e1e1e; color: #ffffff; padding: 10px; text-align: left; white-space: pre-wrap; font-family: monospace; }
+    .json-key { color: #9cdcfe; font-weight: bold; }
+    .json-string { color: #ce9178; }
+    .json-number { color: #b5cea8; }
+    .json-boolean { color: #569cd6; }
+    .json-null { color: #c586c0; }
+    .json-undefined { color: #ffcc00; }
+    .json-added { background: #4caf50; color: white; padding: 2px 5px; border-radius: 3px; }
+    .json-removed { background: #f44336; color: white; padding: 2px 5px; border-radius: 3px; }
+    .json-changed { background: #ff9800; color: white; padding: 2px 5px; border-radius: 3px; }
+    

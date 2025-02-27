@@ -4,6 +4,8 @@ import { BgImageCardComponent } from './components/bg-image-card/bg-image-card.c
 import { TablePageComponent } from './components/tables/table-page/table-page.component';
 import { RewiteArticleComponent } from './components/TextAnalysisTools/rewite-article/rewite-article.component';
 import { JsonFormatterComponent } from './components/tools/json-formatter/json-formatter.component';
+import { JsonComparisonComponent } from './components/tools/json-comparison/json-comparison/json-comparison.component';
+import { VoiceTakeComponent } from './components/tools/voice-take/voice-take.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/chat-bot', pathMatch: 'full' },
@@ -118,6 +120,18 @@ export const routes: Routes = [
         path: 'json-formatter',
         component: JsonFormatterComponent,
           title:"Json-Formatter"
+      },
+
+      {
+        path: 'json-compare',
+        component: JsonComparisonComponent,
+          title:"Json-compare"
+      },
+
+      {
+        path: 'voice-take',
+        component: VoiceTakeComponent,
+          title:"Voice-Take"
       },
     ],
   },

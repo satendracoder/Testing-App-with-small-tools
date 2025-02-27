@@ -1,0 +1,21 @@
+<h2>🎙 Voice Command Transactions</h2>
+
+<!-- Speech Recognition Buttons -->
+<button (click)="startVoiceCommand()" [disabled]="speechService.isListening">
+  🎤 Start Listening
+</button>
+
+<button (click)="stopVoiceCommand()" [disabled]="!speechService.isListening">
+  🛑 Stop Listening
+</button>
+
+<!-- Display Recognized Text -->
+<p *ngIf="speechService.transcript">You said: <b>{{ speechService.transcript }}</b></p>
+
+<h3>Try saying:</h3>
+<ul>
+  <li>"Pay 500"</li>
+  <li>"Pay 1000"</li>
+  <li>"Change language to Hindi"</li>
+  <li>"Change language to English"</li>
+</ul>

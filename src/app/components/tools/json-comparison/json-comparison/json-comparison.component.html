@@ -1,1 +1,12 @@
-<p>json-comparison works!</p>
+<div class="container">
+    <h2>JSON Comparison Tool</h2>
+    <div class="input-section">
+      <textarea [(ngModel)]="jsonInput1" placeholder="Enter first JSON"></textarea>
+      <textarea [(ngModel)]="jsonInput2" placeholder="Enter second JSON"></textarea>
+    </div>
+    <button (click)="compareJSON()">Compare JSON</button>
+    <div class="output">
+      <h3>Comparison Result:</h3>
+      <pre [innerHTML]="formattedComparison"></pre>
+    </div>
+  </div>

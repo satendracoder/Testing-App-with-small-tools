@@ -11,10 +11,10 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 export class ToolsComponent {
 
   tools=[
-    {
-      title:"QR Code Generate",
-      Baseurl:"/tools/qe_code"
-    },
+    // {
+    //   title:"QR Code Generate",
+    //   Baseurl:"/tools/qe_code"
+    // },
     {
       title:"Background remove",
       Baseurl:"/tools/bg"
@@ -48,6 +48,14 @@ export class ToolsComponent {
     {
       title:"Json-Formatter Tools",
       Baseurl:"/tools/json-formatter"
-    }
+    },
+    {
+      title:"Json-Compare Tools",
+      Baseurl:"/tools/json-compare"
+    },
+    {
+      title:"Voice-Take Tools",
+      Baseurl:"/tools/voice-take"
+    },
   ]
 }
