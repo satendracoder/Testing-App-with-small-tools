@@ -1,0 +1,70 @@
+<!-- Toolbar -->
+<div class="toolbar">
+    <!-- Undo / Redo -->
+    <button (click)="executeCommand('undo')">↩ Undo</button>
+    <button (click)="executeCommand('redo')">↪ Redo</button>
+  
+    <!-- Text Formatting -->
+    <button (click)="executeCommand('bold')"><b>B</b></button>
+    <button (click)="executeCommand('italic')"><i>I</i></button>
+    <button (click)="executeCommand('underline')"><u>U</u></button>
+    <button (click)="executeCommand('strikeThrough')"><s>S</s></button>
+  
+    <!-- Headings -->
+    <select (change)="formatBlock($event)">
+      <option value="p">Paragraph</option>
+      <option value="h1">H1</option>
+      <option value="h2">H2</option>
+      <option value="h3">H3</option>
+    </select>
+  
+    <!-- Font Size & Color -->
+    <!-- <button (click)="changeTextColor()">🖍 Color</button>
+    <button (click)="changeBgColor()">🎨 BG</button> -->
+  
+    <!-- Alignment -->
+    <button (click)="executeCommand('justifyLeft')">⬅ Left</button>
+    <button (click)="executeCommand('justifyCenter')">⬆ Center</button>
+    <button (click)="executeCommand('justifyRight')">➡ Right</button>
+    <button (click)="executeCommand('justifyFull')">↔ Justify</button>
+  
+    <!-- Lists -->
+    <button (click)="executeCommand('insertUnorderedList')">• List</button>
+    <button (click)="executeCommand('insertOrderedList')">1. List</button>
+  
+    <!-- Links & Bookmarks -->
+    <button (click)="insertLink()">🔗 Link</button>
+    <button (click)="insertBookmark()">🔖 Bookmark</button>
+  
+    <!-- Media: Image, Table, Video -->
+    <button (click)="insertImage()">📷 Image</button>
+    <input type="file" (change)="uploadImage($event)" />
+    <button (click)="insertTable()">📊 Table</button>
+    <button (click)="insertVideo()">📹 Video</button>
+  
+    <!-- Quotes & Code -->
+    <button (click)="insertQuote()">❝ Quote</button>
+    <button (click)="insertCodeBlock()">` Code</button>
+  
+    <!-- Special Symbols -->
+    <button (click)="insertSymbol()">Ω Symbol</button>
+  
+    <!-- Export -->
+    <button (click)="exportAsWord()">📄 Word</button>
+    <button (click)="exportAsPDF()">📑 PDF</button>
+    <button (click)="convertToJSON()">📂 JSON</button>
+  </div>
+  
+  <!-- Editable Content Area -->
+  <div 
+    class="editor" 
+    contenteditable="true" 
+    #editorContent 
+    (input)="onContentChange()"
+    (drop)="handleDrop($event)"
+    (dragover)="allowDrop($event)">
+  </div>
+  
+  <!-- Output -->
+  <pre>{{ convertedOutput }}</pre>
+  

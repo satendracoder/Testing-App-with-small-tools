@@ -1,0 +1,27 @@
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    background: #f3f3f3;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  
+    button, select, input {
+      padding: 5px;
+      border: none;
+      cursor: pointer;
+      background: white;
+      &:hover {
+        background: #ddd;
+      }
+    }
+  }
+  
+  .editor {
+    min-height: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+  }
+  

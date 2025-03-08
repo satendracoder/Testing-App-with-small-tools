@@ -9,6 +9,7 @@ import { VoiceTakeComponent } from './components/tools/voice-take/voice-take.com
 import { VoiceToolsComponent } from './components/tools/voice-tools/voice-tools.component';
 import { profile } from 'console';
 import { ProfilePageComponent } from './components/profile-page/profile-page.component';
+import { EditorTextComponent } from './editor/editor-text/editor-text.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -133,4 +134,6 @@ export const routes: Routes = [
       },
     ],
   },
+
+  {path:'editor_text', component:EditorTextComponent, title:"Editor Text"}
 ];
