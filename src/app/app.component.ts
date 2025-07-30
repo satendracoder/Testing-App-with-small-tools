@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MateriallistModule } from './shared/materiallist/materiallist.module';
 import { VoiceTakeService } from './services/voice-take/voice-take.service';
@@ -10,7 +10,7 @@ import { VoiceTakeService } from './services/voice-take/voice-take.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent{
 
   isLoading = false; // Loader initially hidden
 
@@ -33,9 +33,7 @@ export class AppComponent {
     { name: 'Great Help', icon: 'bi bi-heart', color: '#f4cccc', iconBgColor: '#e06666' }
   ];
 
-  ngAfterViewInit() {
-    this.scrollContainer.nativeElement.scrollLeft = 0;
-  }
+
 
   scroll(direction: string) {
     if (!this.scrollContainer) return;

@@ -12,8 +12,8 @@ import { ProfilePageComponent } from './components/profile-page/profile-page.com
 import { EditorTextComponent } from './editor/editor-text/editor-text.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  {path: 'home', component:ProfilePageComponent, title: 'Home'},
+  { path: '', redirectTo: '', pathMatch: 'full' },
+  {path: '', component:ProfilePageComponent, title: 'Home'},
   {
     path: 'chat-bot',
     component: ChatBotComponent,

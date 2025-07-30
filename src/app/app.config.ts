@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, isDevMode, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -7,7 +7,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideToastr } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { provideLottieOptions } from 'ngx-lottie';
+import {provideStore} from '@ngrx/store';
+import {provideEffects} from '@ngrx/effects';
+import {provideStoreDevtools} from '@ngrx/store-devtools';
+import { todoReducer } from './components/ngrx/store/todo.reducer';
 
 
 export const appConfig: ApplicationConfig = {
@@ -19,6 +22,17 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(), // required animations providers
     provideToastr(), // Toastr providers
     provideHttpClient(withFetch()), provideAnimationsAsync(),
-   
+    provideStore({
+      todos:todoReducer
+    }),
+    provideEffects(),
+    provideStoreDevtools({
+      maxAge:20,
+      logOnly:!isDevMode(),
+      autoPause:true,
+      trace:false,
+      traceLimit:75,
+      connectInZone:true
+    })
   ]
 };

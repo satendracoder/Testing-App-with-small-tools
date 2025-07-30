@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Todo App</h1>
+
+    <form (ngSubmit)="addTodo()">
+        <input type="text" [(ngModel)]="name" name="name" placeholder="Name" required />
+        <input type="text" [(ngModel)]="dec" name="dec" placeholder="Description" required />
+        <button type="submit">Add Todo</button>
+    </form>
+
+    <ul>
+        <li *ngFor="let todo of todos$ | async">
+            <strong>{{ todo.name }}</strong>: {{ todo.dec }}
+        </li>
+    </ul>
+</div>
